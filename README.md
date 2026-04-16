@@ -33,7 +33,7 @@ This is a full-stack **MINI URL Application** built using **Node.js (Express)** 
 ## 📁 Project Structure
 
 ```
-URL_SHORTENER/
+MINI-URL/
 ├── BACKEND/        # Express backend
 ├── FRONTEND/       # React frontend
 ```
