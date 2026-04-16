@@ -1,6 +1,6 @@
-# 🔗 URL Shortener Web App
+# 🔗 MINI URL Web App
 
-This is a full-stack **URL Shortener Application** built using **Node.js (Express)** for the backend and **React.js (Vite)** for the frontend. The app allows users to register, log in, and generate short URLs that redirect to the original long links.
+This is a full-stack **MINI URL Application** built using **Node.js (Express)** for the backend and **React.js (Vite)** for the frontend. The app allows users to register, log in, and generate short URLs that redirect to the original long links.
 
 ---
 
@@ -45,9 +45,9 @@ URL_SHORTENER/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/RajGauravTiwari
-/URL_SHORTENER.git
-cd URL_SHORTENER
+git clone https://github.com/Smai345
+/MINI-URL.git
+cd MINI-URL
 ```
 
 ---
