@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # MongoDB Service (Optional - use MongoDB Atlas instead)
+  # mongodb:
+  #   image: mongo:latest
+  #   ports:
+  #     - "27017:27017"
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: admin
+  #     MONGO_INITDB_ROOT_PASSWORD: password
+  #   volumes:
+  #     - mongo_data:/data/db
+
+  # Backend Service
+  backend:
+    build:
+      context: ./BACKEND
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      MONGO_URI: ${MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
+      PORT: 3000
+      FRONTEND_URL: ${FRONTEND_URL}
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  # Frontend Service (Nginx serving static files)
+  frontend:
+    build:
+      context: ./FRONTEND
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+
+# volumes:
+#   mongo_data:

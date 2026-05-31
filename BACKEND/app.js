@@ -1,5 +1,5 @@
 import express from "express";
-import {nanoid} from "nanoid"
+import { nanoid } from "nanoid"
 import dotenv from "dotenv"
 import connectDB from "./src/config/monogo.config.js"
 import short_url from "./src/routes/short_url.route.js"
@@ -11,7 +11,7 @@ import cors from "cors"
 import { attachUser } from "./src/utils/attachUser.js";
 import cookieParser from "cookie-parser"
 
-dotenv.config("./.env")
+dotenv.config()
 
 const app = express();
 
@@ -21,19 +21,19 @@ app.use(cors({
 }));
 
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 app.use(attachUser)
 
-app.use("/api/user",user_routes)
-app.use("/api/auth",auth_routes)
-app.use("/api/create",short_url)
-app.get("/:id",redirectFromShortUrl)
+app.use("/api/user", user_routes)
+app.use("/api/auth", auth_routes)
+app.use("/api/create", short_url)
+app.get("/:id", redirectFromShortUrl)
 
 app.use(errorHandler)
 
-app.listen(3000,()=>{
+app.listen(5000, () => {
     connectDB()
     console.log("Server is running on http://localhost:3000");
 })

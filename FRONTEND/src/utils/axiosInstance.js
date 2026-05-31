@@ -1,9 +1,11 @@
 import axios from "axios"
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 const axiosInstance = axios.create({
-    baseURL:"http://localhost:3000",
-    timeout:10000, //10s
-    withCredentials:true
+    baseURL: API_BASE_URL,
+    timeout: 10000, //10s
+    withCredentials: true
 })
 
 // Response interceptor
@@ -17,7 +19,7 @@ axiosInstance.interceptors.response.use(
         if (error.response) {
             // The server responded with a status code outside the 2xx range
             const { status, data } = error.response;
-            
+
             switch (status) {
                 case 400:
                     console.error("Bad Request:", data);
