@@ -1,6 +1,6 @@
 # 🔗 MINI URL Web App
 
-webiste:https://miniurlweb.netlify.app/
+Website : https://miniurlweb.netlify.app/
 
 This is a full-stack **MINI URL Application** built using **Node.js (Express)** for the backend and **React.js (Vite)** for the frontend. The app allows users to register, log in, and generate short URLs that redirect to the original long links.
 
