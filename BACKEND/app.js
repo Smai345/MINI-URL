@@ -16,7 +16,7 @@ dotenv.config()
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://miniurlweb.netlify.app/'], // your React app
+    origin: ['http://localhost:5173', 'https://miniurlweb.netlify.app'], // your React app
     credentials: true // 👈 this allows cookies to be sent
 }));
 
